@@ -1,0 +1,36 @@
+function pow 3
+
+    // resultado = 1
+    push constant 1
+    pop local 0
+
+    // base = argument0
+    push argument 0
+    pop local 1
+
+    // expoente = argument1
+    push argument 1
+    pop local 2
+
+label pow_loop
+    push local 2
+    push constant 0
+    eq
+    if-goto pow_end
+
+    // resultado = mult(resultado, base)
+    push local 0
+    push local 1
+    call mult 2
+    pop local 0
+
+    push local 2
+    push constant 1
+    sub
+    pop local 2
+
+    goto pow_loop
+
+label pow_end
+    push local 0
+    return

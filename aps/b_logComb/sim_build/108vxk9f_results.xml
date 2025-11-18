@@ -1,0 +1,6 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1757547809" />
+    <testcase name="tb_dmux2way" classname="logComb_cocotb" file="/home/borg/ELESSIS/aps-grupo-nome/b_logComb/logComb_cocotb.py" lineno="147" time="0.0005354881286621094" sim_time_ns="8.000001" ratio_time="14939.642116787176" />
+  </testsuite>
+</testsuites>

@@ -1,0 +1,4 @@
+v 4
+file / "/home/borg/ELESSIS/aps-grupo-nome/b_logComb/src/and16.vhd" "995f2af286e7cc23266201778b00fe4a56b64dd7" "20250911000120.065":
+  entity and16 at 1( 0) + 0 on 11;
+  architecture arch of and16 at 11( 212) + 0 on 12;

@@ -1,0 +1,4 @@
+v 4
+file / "/home/borg/ELESSIS/aps-grupo-nome/b_logComb/src/or8way.vhd" "4c5e79d36aa0e7d12c5995cc8f2f37971013e5db" "20250911000122.138":
+  entity or8way at 1( 0) + 0 on 11;
+  architecture arch of or8way at 17( 290) + 0 on 12;

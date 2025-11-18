@@ -1,0 +1,4 @@
+v 4
+file / "/home/borg/ELESSIS/aps-grupo-nome/b_logComb/src/detectordemoedas.vhd" "de42e69456ca4252869ff48ce1169ade2f0422ed" "20250911000130.497":
+  entity detectordemoedas at 1( 0) + 0 on 11;
+  architecture arch of detectordemoedas at 11( 196) + 0 on 12;

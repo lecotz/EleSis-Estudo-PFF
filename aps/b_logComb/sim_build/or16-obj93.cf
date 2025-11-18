@@ -1,0 +1,4 @@
+v 4
+file / "/home/borg/ELESSIS/aps-grupo-nome/b_logComb/src/or16.vhd" "0581c2e57deffe605173b9b85a192f7a4109ac50" "20250911000120.745":
+  entity or16 at 1( 0) + 0 on 11;
+  architecture rtl of or16 at 12( 228) + 0 on 12;

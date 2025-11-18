@@ -1,0 +1,4 @@
+v 4
+file / "/home/borg/ELESSIS/aps-grupo-nome/b_logComb/src/impressora.vhd" "db04ae22569fe9402f589d8858b15b21fc0749ac" "20250911000131.891":
+  entity impressora at 1( 0) + 0 on 11;
+  architecture arch of impressora at 10( 148) + 0 on 12;

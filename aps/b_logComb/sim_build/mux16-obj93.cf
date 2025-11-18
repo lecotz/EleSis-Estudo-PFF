@@ -1,0 +1,4 @@
+v 4
+file / "/home/borg/ELESSIS/aps-grupo-nome/b_logComb/src/mux16.vhd" "b5e8bf7cb51ddee074f438dc82126da03445c5b2" "20250911000128.418":
+  entity mux16 at 1( 0) + 0 on 11;
+  architecture rtl of mux16 at 13( 267) + 0 on 12;

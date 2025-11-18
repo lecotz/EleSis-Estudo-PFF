@@ -1,0 +1,6 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1757548883" />
+    <testcase name="tb_barrelshifter16" classname="logComb_cocotb" file="/home/borg/ELESSIS/aps-grupo-nome/b_logComb/logComb_cocotb.py" lineno="126" time="0.0008854866027832031" sim_time_ns="20.000001" ratio_time="22586.452394804524" />
+  </testsuite>
+</testsuites>

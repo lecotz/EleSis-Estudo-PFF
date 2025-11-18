@@ -1,0 +1,46 @@
+// ---------------------------------  
+// Rafael Corsi @ insper . edu . br
+//              2018a
+// ---------------------------------
+//
+// Descritivo   :
+//  Faça a divisão do valor de temp 0 por temp 1
+//  salve o resultado em temp 3
+//
+//  temp 3 = temp 0 / temp 1
+//
+//  assuma que temp 0> temp 1 e ambos inteiros
+// ----------------------------------
+
+function Main.main 0
+
+push constant 0
+pop temp 2
+
+label LOOP
+push temp 0
+push temp 1
+lt
+if-goto DONE
+
+push temp 0
+push temp 1
+sub
+pop temp 0
+
+push temp 2
+push constant 1
+add
+pop temp 2
+
+goto LOOP
+
+label DONE
+push temp 2
+pop temp 3
+
+label end
+label while
+goto while
+
+

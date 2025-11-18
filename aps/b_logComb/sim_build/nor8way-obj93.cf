@@ -1,0 +1,4 @@
+v 4
+file / "/home/borg/ELESSIS/aps-grupo-nome/b_logComb/src/nor8way.vhd" "dd5e61b943386ac0bf13a1d84c438cab9323942f" "20250911000122.828":
+  entity nor8way at 1( 0) + 0 on 11;
+  architecture arch of nor8way at 17( 292) + 0 on 12;

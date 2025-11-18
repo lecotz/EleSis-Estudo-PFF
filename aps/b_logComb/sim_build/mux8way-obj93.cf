@@ -1,0 +1,4 @@
+v 4
+file / "/home/borg/ELESSIS/aps-grupo-nome/b_logComb/src/mux8way.vhd" "c2a4ff51db9888edeb00b3cd6647eebb7fb88e8e" "20250911000127.725":
+  entity mux8way at 1( 0) + 0 on 11;
+  architecture rtl of mux8way at 19( 402) + 0 on 12;

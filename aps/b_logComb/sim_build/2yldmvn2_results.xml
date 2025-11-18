@@ -1,0 +1,6 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1757548890" />
+    <testcase name="tb_detector_de_moedas" classname="logComb_cocotb" file="/home/borg/ELESSIS/aps-grupo-nome/b_logComb/logComb_cocotb.py" lineno="405" time="0.0005502700805664062" sim_time_ns="8.000001" ratio_time="14538.317241899478" />
+  </testsuite>
+</testsuites>

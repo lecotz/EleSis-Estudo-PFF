@@ -1,0 +1,4 @@
+v 4
+file / "/home/borg/ELESSIS/aps-grupo-nome/b_logComb/src/mux2way.vhd" "0e1092738a3877f424bc78881123e40062e8fc38" "20250911000126.351":
+  entity mux2way at 1( 0) + 0 on 11;
+  architecture rtl of mux2way at 13( 209) + 0 on 12;

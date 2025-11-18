@@ -1,0 +1,4 @@
+v 4
+file / "/home/borg/ELESSIS/aps-grupo-nome/b_logComb/src/barrelshifter16.vhd" "d3b7e77126e1a9157d4cb072ed7ce490d8a57ba6" "20250911000123.555":
+  entity barrelshifter16 at 1( 0) + 0 on 11;
+  architecture rtl of barrelshifter16 at 14( 306) + 0 on 12;
