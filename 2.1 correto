@@ -1,0 +1,68 @@
+COMENTARIOS E ESPAÇAMENTOS
+
+
+
+
+
+
+
+
+
+
+// ---------------------------------  
+// ---------------------------------
+
+function Main.main 0
+
+push constant 0
+pop temp 1
+push temp 0
+pop temp 2
+
+label SUM_LOOP
+  push temp 2
+  push constant 0
+  eq
+  if-goto AFTER_SUM
+
+  pop temp 3
+  push temp 1
+  push temp 3
+  add
+  pop temp 1
+
+  push temp 2
+  push constant 1
+  sub
+  pop temp 2
+
+  goto SUM_LOOP
+
+label AFTER_SUM
+push constant 0
+pop temp 4
+
+label DIV_LOOP
+  push temp 1
+  push temp 0
+  lt
+  if-goto DIV_END
+
+  push temp 1
+  push temp 0
+  sub
+  pop temp 1
+
+  push temp 4
+  push constant 1
+  add
+  pop temp 4
+
+  goto DIV_LOOP
+
+label DIV_END
+push temp 4
+
+// nao deve tirar isso!
+label while2
+    goto while2
