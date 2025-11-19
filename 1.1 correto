@@ -1,0 +1,78 @@
+MUDEM OS COMENTARIOS!!!!!!!!!!
+
+
+
+; RAM[0] = n
+; vetor starta em RAM[15]
+; RAM[1] = esquerda (l)
+; RAM[2] = direita (r)
+; RAM[3] = temp
+
+leaw $15, %A
+movw %A, %D
+leaw $1, %A
+movw %D, (%A)
+
+; r = 15 + n - 1
+
+leaw $0, %A
+movw (%A), %D          
+leaw $15, %A
+addw %A, %D, %D        
+decw %D                
+leaw $2, %A
+movw %D, (%A)
+
+LOOP:
+; se l >= r entao fim
+leaw $1, %A
+movw (%A), %D          
+leaw $2, %A
+subw %D, (%A), %D      
+leaw $END, %A
+jge %D
+nop
+
+
+leaw $1, %A
+movw (%A), %A          
+movw (%A), %D          
+leaw $3, %A
+movw %D, (%A)          
+
+
+leaw $2, %A
+movw (%A), %A          ; a = r
+movw (%A), %D          ; d = RAM[r]
+
+leaw $1, %A
+movw (%A), %A          ; a = l
+movw %D, (%A)          ; RAM[l] = RAM[r]
+
+
+; RAM[r] = temp
+
+leaw $3, %A
+movw (%A), %D          ; d = temp
+
+leaw $2, %A
+movw (%A), %A          ; a = r
+movw %D, (%A)          ; RAM[r] = temp
+
+
+leaw $1, %A
+movw (%A), %D
+incw %D
+movw %D, (%A)
+
+
+leaw $2, %A
+movw (%A), %D
+decw %D
+movw %D, (%A)
+
+leaw $LOOP, %A
+jmp
+nop
+
+END:
