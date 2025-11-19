@@ -56,3 +56,162 @@ label loop_end
 // executar lixo de memoria.
 label while
   goto while
+
+  ; RAM[0] = n
+; vetor começa em RAM[15]
+
+; i = 0  → RAM[1]
+leaw $1, %A
+movw $0, (%A)
+
+; j = n-1  → RAM[2]
+leaw $0, %A
+movw (%A), %D
+decw %D
+leaw $2, %A
+movw %D, (%A)
+
+LOOP:
+; condição: i < j ?
+leaw $1, %A
+movw (%A), %D
+leaw $2, %A
+subw %D, (%A), %D
+leaw $END, %A
+jge %D
+nop
+
+; A = 15 + i
+leaw $1, %A
+movw (%A), %D
+leaw $15, %A
+addw %A, %D, %A
+
+; temp = RAM[A] → RAM[3]
+movw (%A), %D
+leaw $3, %A
+movw %D, (%A)
+
+; B = 15 + j
+leaw $2, %A
+movw (%A), %D
+leaw $15, %A
+addw %A, %D, %A
+
+; RAM[A] = RAM[B]
+movw (%A), %D
+leaw $1, %A
+movw (%A), %A
+leaw $15, %A
+addw %A, %A, %A
+movw %D, (%A)
+
+; RAM[B] = temp
+leaw $3, %A
+movw (%A), %D
+leaw $2, %A
+movw (%A), %A
+leaw $15, %A
+addw %A, %A, %A
+movw %D, (%A)
+
+; i++
+leaw $1, %A
+movw (%A), %D
+incw %D
+movw %D, (%A)
+
+; j--
+leaw $2, %A
+movw (%A), %D
+decw %D
+movw %D, (%A)
+
+leaw $LOOP, %A
+jmp
+nop
+
+END:
+
+
+
+2.1 
+function Main.main 0
+
+push temp 0
+pop temp 1      // contador
+
+push constant 0
+pop temp 2      // soma
+
+label loop
+  push temp 1
+  push constant 0
+  eq
+  if-goto fim
+
+  pop temp 3        // pega elemento do topo
+  push temp 2
+  push temp 3
+  add
+  pop temp 2        // soma += elemento
+
+  push temp 1
+  push constant 1
+  sub
+  pop temp 1        // contador--
+
+  goto loop
+
+label fim
+push temp 2
+push temp 0
+div                // divisão inteira
+
+pop                // remove resto
+pop temp 4         // resultado
+
+push temp 4
+return
+
+
+2.2
+
+; Se RAM[256] == capacidade_max → pilha cheia
+; seta bit 3 de RAM[15]
+; mantém os outros bits
+
+; lê topo da pilha
+leaw $256, %A
+movw (%A), %D
+
+; compara com 32766 (última posição antes do mapeamento de IO)
+leaw $32766, %A
+subw %D, %A, %D
+
+; se diferente → limpa bit 3
+leaw $NOTFULL, %A
+jne %D
+nop
+
+; PILHA CHEIA → setar bit 3
+
+leaw $15, %A
+movw (%A), %D
+leaw $8, %A         ; 0000 1000
+orw %D, %A, %D
+leaw $15, %A
+movw %D, (%A)
+leaw $END, %A
+jmp
+nop
+
+NOTFULL:
+leaw $15, %A
+movw (%A), %D
+leaw $65527, %A     ; máscara para limpar bit 3 (1111 0111)
+andw %D, %A, %D
+leaw $15, %A
+movw %D, (%A)
+
+END:
